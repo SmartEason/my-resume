@@ -3,60 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人簡介分流網頁</title>
+    <title>李塬閎的個人網頁</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="desktop-view">
-        <header>
-            <h1>我的個人網站 (電腦版)</h1>
-        </header>
-        <main class="container">
-            <section class="card">
+        <div class="hero">
+            <h1>李塬閎的專業資訊 (電腦端)</h1>
+            <p>朝陽科技大學資訊工程系</p>
+        </div>
+        <div class="desktop-content">
+            <section>
                 <h2>👤 個人簡介</h2>
                 <p>我是李塬閎。目前就讀於朝陽科技大學資訊工程系，熱衷於探索新科技與開發軟體。</p>
             </section>
-            <section class="card">
+            <section>
                 <h2>🎨 興趣專長</h2>
-                <p>專長：C/C++ 基礎、Python 程式設計。<br>興趣： 騎車、打 Game、羽球。</p>
+                <p><strong>專長：</strong>C/C++ 基礎、Python 程式設計</p>
+                <p><strong>興趣：</strong>騎車、打 Game、羽球</p>
             </section>
-        </main>
+        </div>
     </div>
 
     <div class="mobile-view">
-        <header>
-            <h1>我的名片 (手機版)</h1>
-        </header>
+        <div class="mobile-header">
+            <h2>塬閎的手機名片</h2>
+        </div>
         
-        <div class="tab-menu">
-            <button onclick="switchTab('intro')">個人簡介</button>
-            <button onclick="switchTab('skills')">興趣專長</button>
+        <div class="tabs">
+            <button onclick="show('intro')">個人簡介</button>
+            <button onclick="show('skills')">興趣專長</button>
         </div>
 
-        <div id="intro" class="content-box">
-            <h3>👤 個人簡介</h3>
-            <p>我是李塬閎。目前就讀於朝陽科技大學資訊工程系，熱衷於探索新科技與開發軟體。</p>
+        <div id="intro" class="mobile-box">
+            <p>我是李塬閎。就讀於朝陽資工系，熱衷於探索新科技與開發軟體。這是我的簡介。</p>
         </div>
 
-        <div id="skills" class="content-box" style="display:none;">
-            <h3>🎨 興趣專長</h3>
+        <div id="skills" class="mobile-box" style="display:none;">
             <ul>
-                <li>專長：C/C++ 基礎、Python 程式設計。</li>
-                <li>興趣： 騎車、打 Game、羽球。</li>
+                <li><strong>專長：</strong>C/C++ 基礎、Python</li>
+                <li><strong>興趣：</strong>騎車、打 Game、羽球</li>
             </ul>
         </div>
     </div>
 
     <script>
-        // 手機版切換邏輯
-        function switchTab(tabId) {
-            // 先隱藏所有內容
-            document.querySelectorAll('.content-box').forEach(el => {
-                el.style.display = 'none';
-            });
-            // 顯示點選的內容
-            document.getElementById(tabId).style.display = 'block';
+        // 手機端的切換按鈕邏輯
+        function show(id) {
+            document.querySelectorAll('.mobile-box').forEach(b => b.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
         }
     </script>
 </body>
