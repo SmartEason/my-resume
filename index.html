@@ -9,51 +9,77 @@
 <body>
 
     <div class="desktop-view">
-        <div class="hero">
-            <h1>李塬閎的專業資訊 (電腦端)</h1>
-            <p>朝陽科技大學資訊工程系</p>
+        <div class="desktop-header">
+            <h1>歡迎來到 李塬閎 的專業履歷</h1>
+            <p>朝陽科技大學 資訊工程系</p>
         </div>
-        <div class="desktop-content">
-            <section>
-                <h2>👤 個人簡介</h2>
-                <p>我是李塬閎。目前就讀於朝陽科技大學資訊工程系，熱衷於探索新科技與開發軟體。</p>
+        
+        <div class="desktop-layout">
+            <section class="info-card">
+                <h2>🎓 個人簡介</h2>
+                <hr>
+                <p>你好，我是<strong>李塬閎</strong>。</p>
+                <p>目前就讀於朝陽科技大學資訊工程系。我對新科技充滿熱情，熱衷於開發軟體與解決複雜的邏輯問題。在學期間致力於提升自己的軟體工程實力。</p>
             </section>
-            <section>
-                <h2>🎨 興趣專長</h2>
-                <p><strong>專長：</strong>C/C++ 基礎、Python 程式設計</p>
-                <p><strong>興趣：</strong>騎車、打 Game、羽球</p>
+
+            <section class="info-card">
+                <h2>🚀 興趣與專長</h2>
+                <hr>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h3>💻 專長技能</h3>
+                        <ul>
+                            <li>C / C++ 基礎實作</li>
+                            <li>Python 程式設計</li>
+                        </ul>
+                    </div>
+                    <div class="skill-item">
+                        <h3>🚴 興趣愛好</h3>
+                        <ul>
+                            <li>騎車 (享受追風與自由)</li>
+                            <li>打 Game (訓練邏輯與反應)</li>
+                            <li>羽球 (揮灑汗水保持健康)</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
         </div>
     </div>
 
+
     <div class="mobile-view">
         <div class="mobile-header">
-            <h2>塬閎的手機名片</h2>
+            <h2>李塬閎 (手機版名片)</h2>
         </div>
         
-        <div class="tabs">
-            <button onclick="show('intro')">個人簡介</button>
-            <button onclick="show('skills')">興趣專長</button>
+        <div class="mobile-tabs">
+            <button onclick="toggleContent('mobile-intro')" class="active-btn">個人簡介</button>
+            <button onclick="toggleContent('mobile-skills')">興趣專長</button>
         </div>
 
-        <div id="intro" class="mobile-box">
-            <p>我是李塬閎。就讀於朝陽資工系，熱衷於探索新科技與開發軟體。這是我的簡介。</p>
+        <div id="mobile-intro" class="mobile-content" style="display: block;">
+            <h3>👋 關於我</h3>
+            <p>我是李塬閎，朝陽科大資工系學生。熱衷於探索新科技與開發軟體！這是我專為手機設計的簡介。</p>
         </div>
 
-        <div id="skills" class="mobile-box" style="display:none;">
-            <ul>
-                <li><strong>專長：</strong>C/C++ 基礎、Python</li>
-                <li><strong>興趣：</strong>騎車、打 Game、羽球</li>
-            </ul>
+        <div id="mobile-skills" class="mobile-content" style="display: none;">
+            <h3>⚡ 專長</h3>
+            <p>C/C++、Python 程式設計</p>
+            <h3>🌟 興趣</h3>
+            <p>騎車、打 Game、羽球</p>
         </div>
     </div>
 
     <script>
-        // 手機端的切換按鈕邏輯
-        function show(id) {
-            document.querySelectorAll('.mobile-box').forEach(b => b.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
+        function toggleContent(targetId) {
+            // 隱藏所有手機版內容區塊
+            document.querySelectorAll('.mobile-content').forEach(function(el) {
+                el.style.display = 'none';
+            });
+            // 只顯示被點擊的區塊
+            document.getElementById(targetId).style.display = 'block';
         }
     </script>
+
 </body>
 </html>

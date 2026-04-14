@@ -1,26 +1,86 @@
-/* 預設隱藏所有內容 */
-.desktop-only, .mobile-only {
+/* 全局基本設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    background-color: #f0f2f5;
+}
+
+/* 預設先將電腦版和手機版都隱藏 */
+.desktop-view, .mobile-view {
     display: none;
 }
 
-/* --- 當螢幕寬度大於 769px (桌電) --- */
+/* ========================================== */
+/* 💻 當螢幕寬度大於 768px 時 (視為桌電)      */
+/* ========================================== */
 @media screen and (min-width: 769px) {
-    .desktop-only {
-        display: block;
-        background-color: #f0f4f8;
-        padding: 50px;
+    .desktop-view {
+        display: block; /* 開啟電腦版內容 */
+    }
+    
+    .desktop-header {
+        background-color: #1a237e;
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+    }
+    
+    .desktop-layout {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .info-card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        flex: 1;
     }
 }
 
-/* --- 當螢幕寬度小於 768px (手機) --- */
+/* ========================================== */
+/* 📱 當螢幕寬度小於或等於 768px 時 (視為手機)*/
+/* ========================================== */
 @media screen and (max-width: 768px) {
-    .mobile-only {
-        display: block;
-        padding: 20px;
-        text-align: center;
+    .mobile-view {
+        display: block; /* 開啟手機版內容 */
     }
-    .tab-container button {
-        padding: 10px 20px;
-        margin: 5px;
+    
+    body {
+        background-color: white; /* 手機版背景改為全白 */
+    }
+    
+    .mobile-header {
+        background-color: #e53935;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .mobile-tabs {
+        display: flex;
+        width: 100%;
+    }
+    
+    .mobile-tabs button {
+        flex: 1;
+        padding: 15px;
+        background-color: #eeeeee;
+        border: 1px solid #dddddd;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .mobile-content {
+        padding: 30px 20px;
+        font-size: 18px;
+        line-height: 1.6;
     }
 }
