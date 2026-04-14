@@ -8,37 +8,55 @@
 </head>
 <body>
 
-    <div class="desktop-only">
-        <h1>💻 這是桌電版介面</h1>
-        <section>
-            <h2>個人簡介</h2>
-            <p>這裡顯示詳盡的個人介紹與學經歷...</p>
-        </section>
-        <section>
-            <h2>興趣專長</h2>
-            <p>列出專業技能圖表與長篇興趣描述...</p>
-        </section>
+    <div class="desktop-view">
+        <header>
+            <h1>我的個人網站 (電腦版)</h1>
+        </header>
+        <main class="container">
+            <section class="card">
+                <h2>👤 個人簡介</h2>
+                <p>我是李塬閎。目前就讀於朝陽科技大學資訊工程系，熱衷於探索新科技與開發軟體。</p>
+            </section>
+            <section class="card">
+                <h2>🎨 興趣專長</h2>
+                <p>專長：C/C++ 基礎、Python 程式設計。<br>興趣： 騎車、打 Game、羽球。</p>
+            </section>
+        </main>
     </div>
 
-    <div class="mobile-only">
-        <h1>📱 這是手機版介面</h1>
-        <div class="tab-container">
-            <button onclick="showContent('intro')">個人簡介</button>
-            <button onclick="showContent('skills')">興趣專長</button>
-        </div>
+    <div class="mobile-view">
+        <header>
+            <h1>我的名片 (手機版)</h1>
+        </header>
         
-        <div id="intro" class="mobile-content">
-            <p>手機版簡介：精簡重點內容。</p>
+        <div class="tab-menu">
+            <button onclick="switchTab('intro')">個人簡介</button>
+            <button onclick="switchTab('skills')">興趣專長</button>
         </div>
-        <div id="skills" class="mobile-content" style="display:none;">
-            <p>手機版專長：清單式呈現。</p>
+
+        <div id="intro" class="content-box">
+            <h3>👤 個人簡介</h3>
+            <p>我是李塬閎。目前就讀於朝陽科技大學資訊工程系，熱衷於探索新科技與開發軟體。</p>
+        </div>
+
+        <div id="skills" class="content-box" style="display:none;">
+            <h3>🎨 興趣專長</h3>
+            <ul>
+                <li>專長：C/C++ 基礎、Python 程式設計。</li>
+                <li>興趣： 騎車、打 Game、羽球。</li>
+            </ul>
         </div>
     </div>
 
     <script>
-        function showContent(id) {
-            document.querySelectorAll('.mobile-content').forEach(el => el.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
+        // 手機版切換邏輯
+        function switchTab(tabId) {
+            // 先隱藏所有內容
+            document.querySelectorAll('.content-box').forEach(el => {
+                el.style.display = 'none';
+            });
+            // 顯示點選的內容
+            document.getElementById(tabId).style.display = 'block';
         }
     </script>
 </body>
