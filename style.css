@@ -1,0 +1,26 @@
+/* 預設隱藏所有內容 */
+.desktop-only, .mobile-only {
+    display: none;
+}
+
+/* --- 當螢幕寬度大於 769px (桌電) --- */
+@media screen and (min-width: 769px) {
+    .desktop-only {
+        display: block;
+        background-color: #f0f4f8;
+        padding: 50px;
+    }
+}
+
+/* --- 當螢幕寬度小於 768px (手機) --- */
+@media screen and (max-width: 768px) {
+    .mobile-only {
+        display: block;
+        padding: 20px;
+        text-align: center;
+    }
+    .tab-container button {
+        padding: 10px 20px;
+        margin: 5px;
+    }
+}

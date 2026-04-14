@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人簡介分流網頁</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="desktop-only">
+        <h1>💻 這是桌電版介面</h1>
+        <section>
+            <h2>個人簡介</h2>
+            <p>這裡顯示詳盡的個人介紹與學經歷...</p>
+        </section>
+        <section>
+            <h2>興趣專長</h2>
+            <p>列出專業技能圖表與長篇興趣描述...</p>
+        </section>
+    </div>
+
+    <div class="mobile-only">
+        <h1>📱 這是手機版介面</h1>
+        <div class="tab-container">
+            <button onclick="showContent('intro')">個人簡介</button>
+            <button onclick="showContent('skills')">興趣專長</button>
+        </div>
+        
+        <div id="intro" class="mobile-content">
+            <p>手機版簡介：精簡重點內容。</p>
+        </div>
+        <div id="skills" class="mobile-content" style="display:none;">
+            <p>手機版專長：清單式呈現。</p>
+        </div>
+    </div>
+
+    <script>
+        function showContent(id) {
+            document.querySelectorAll('.mobile-content').forEach(el => el.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
