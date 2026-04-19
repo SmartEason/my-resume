@@ -12,27 +12,33 @@ body {
 }
 
 /* ========================================== */
-/* 💻 桌電端樣式 (螢幕寬度大於 768px)         */
+/* 💻 桌電端樣式 (螢幕寬度 > 768px)           */
 /* ========================================== */
 @media screen and (min-width: 769px) {
-    .desktop-view { display: block; }
+    /* 這裡就是「讓整個區塊在螢幕正中間」的魔法 */
+    .desktop-view { 
+        display: flex; 
+        justify-content: center; /* 左右置中 */
+        align-items: center;     /* 上下置中 */
+        min-height: 100vh;       /* 高度拉滿整個螢幕 */
+    }
     
+    /* 所有的內容都包在這個卡片裡 */
+    .desktop-card {
+        width: 800px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* 加深陰影更有立體感 */
+        overflow: hidden; 
+        text-align: center; /* 內部文字置中 */
+    }
+
     .desktop-header {
         background-color: #1a237e;
         color: white;
-        text-align: center; /* 標題置中 */
-        padding: 60px 20px;
+        padding: 40px 20px;
     }
     
-    .desktop-container {
-        max-width: 800px;
-        margin: 40px auto;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        overflow: hidden;
-    }
-
     .desktop-tabs {
         display: flex;
         background: #e8eaf6;
@@ -42,50 +48,56 @@ body {
         flex: 1;
         padding: 20px;
         font-size: 18px;
+        font-weight: bold;
         border: none;
         background: none;
         cursor: pointer;
         transition: 0.3s;
-        text-align: center; /* 按鈕文字置中 */
     }
 
     .desktop-tabs button:hover {
         background: #c5cae9;
     }
 
-    /* 關鍵修改：讓桌電版內容全部置中 */
     .desktop-content-box {
-        padding: 40px;
+        padding: 50px 40px;
         font-size: 18px;
         line-height: 1.8;
-        text-align: center; /* 文字置中 */
-    }
-
-    /* 讓電腦版的清單 (ul) 雖然置中但靠左對齊內容，比較美觀 */
-    .desktop-content-box ul {
-        display: inline-block;
-        text-align: left;
     }
 }
 
 /* ========================================== */
-/* 📱 手機端樣式 (螢幕寬度小於等於 768px)       */
+/* 📱 手機端樣式 (螢幕寬度 <= 768px)          */
 /* ========================================== */
 @media screen and (max-width: 768px) {
-    .mobile-view { display: block; }
+    /* 手機版一樣使用 Flexbox 達成上下左右置中 */
+    .mobile-view { 
+        display: flex; 
+        justify-content: center; /* 左右置中 */
+        align-items: center;     /* 上下置中 */
+        min-height: 100vh;       /* 高度拉滿螢幕 */
+        padding: 20px;           /* 避免卡片貼死螢幕邊緣 */
+        box-sizing: border-box;
+    }
     
-    body { background-color: white; }
-    
+    .mobile-card {
+        width: 100%;
+        max-width: 400px; /* 限制手機版卡片最大寬度 */
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        overflow: hidden;
+        text-align: center; /* 內部文字置中 */
+    }
+
     .mobile-header {
         background-color: #e53935;
         color: white;
-        text-align: center;
         padding: 20px;
     }
     
     .mobile-tabs {
         display: flex;
-        width: 100%;
     }
     
     .mobile-tabs button {
@@ -96,20 +108,13 @@ body {
         font-size: 16px;
         font-weight: bold;
         cursor: pointer;
-        text-align: center;
     }
     
     .mobile-tabs button:active { background-color: #cccccc; }
     
     .mobile-content-box {
-        padding: 30px 20px;
+        padding: 40px 20px;
         font-size: 18px;
         line-height: 1.6;
-        text-align: center; /* 手機端通常也會習慣置中 */
-    }
-
-    .mobile-content-box ul {
-        display: inline-block;
-        text-align: left;
     }
 }
