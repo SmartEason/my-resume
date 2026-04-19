@@ -20,7 +20,7 @@ body {
     .desktop-header {
         background-color: #1a237e;
         color: white;
-        text-align: center;
+        text-align: center; /* 標題置中 */
         padding: 60px 20px;
     }
     
@@ -46,16 +46,25 @@ body {
         background: none;
         cursor: pointer;
         transition: 0.3s;
+        text-align: center; /* 按鈕文字置中 */
     }
 
     .desktop-tabs button:hover {
         background: #c5cae9;
     }
 
+    /* 關鍵修改：讓桌電版內容全部置中 */
     .desktop-content-box {
         padding: 40px;
         font-size: 18px;
         line-height: 1.8;
+        text-align: center; /* 文字置中 */
+    }
+
+    /* 讓電腦版的清單 (ul) 雖然置中但靠左對齊內容，比較美觀 */
+    .desktop-content-box ul {
+        display: inline-block;
+        text-align: left;
     }
 }
 
@@ -87,6 +96,7 @@ body {
         font-size: 16px;
         font-weight: bold;
         cursor: pointer;
+        text-align: center;
     }
     
     .mobile-tabs button:active { background-color: #cccccc; }
@@ -95,5 +105,11 @@ body {
         padding: 30px 20px;
         font-size: 18px;
         line-height: 1.6;
+        text-align: center; /* 手機端通常也會習慣置中 */
+    }
+
+    .mobile-content-box ul {
+        display: inline-block;
+        text-align: left;
     }
 }
