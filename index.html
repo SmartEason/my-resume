@@ -9,12 +9,12 @@
 <body>
 
     <div class="desktop-view">
-        <div class="desktop-header">
-            <h1>歡迎來到 李塬閎 的專業履歷 (桌電端)</h1>
-            <p>朝陽科技大學 資訊工程系</p>
-        </div>
-        
-        <div class="desktop-container">
+        <div class="desktop-card">
+            <div class="desktop-header">
+                <h1>歡迎來到 李塬閎 的專業履歷 (桌電端)</h1>
+                <p>朝陽科技大學 資訊工程系</p>
+            </div>
+            
             <div class="desktop-tabs">
                 <button onclick="toggleDesktop('desk-intro')">👨‍💻 個人簡介</button>
                 <button onclick="toggleDesktop('desk-skills')">🚀 興趣專長</button>
@@ -24,44 +24,47 @@
                 <h2>🎓 關於我</h2>
                 <hr>
                 <p>你好，我是<strong>李塬閎</strong>。</p>
-                <p>目前就讀於朝陽科技大學資訊工程系。我對新科技充滿熱情，熱衷於開發軟體與解決複雜的邏輯問題。在學期間致力於提升自己的軟體工程實力。</p>
+                <p>目前就讀於朝陽科技大學資訊工程系。<br>我對新科技充滿熱情，熱衷於開發軟體與解決複雜的邏輯問題。</p>
             </div>
 
             <div id="desk-skills" class="desktop-content-box" style="display: none;">
                 <h2>🌟 我的能力與興趣</h2>
                 <hr>
-                <p><strong>💻 專長技能：</strong> C / C++ 基礎實作、Python 程式設計</p>
-                <p><strong>🚴 興趣愛好：</strong> 騎車 (享受追風與自由)、打 Game (訓練邏輯與反應)、羽球 (揮灑汗水)</p>
+                <p><strong>💻 專長技能：</strong><br>C / C++ 基礎實作、Python 程式設計</p>
+                <br>
+                <p><strong>🚴 興趣愛好：</strong><br>騎車、打 Game、羽球</p>
             </div>
         </div>
     </div>
 
 
     <div class="mobile-view">
-        <div class="mobile-header">
-            <h2>李塬閎 (手機版名片)</h2>
-        </div>
-        
-        <div class="mobile-tabs">
-            <button onclick="toggleMobile('mob-intro')">個人簡介</button>
-            <button onclick="toggleMobile('mob-skills')">興趣專長</button>
-        </div>
+        <div class="mobile-card">
+            <div class="mobile-header">
+                <h2>李塬閎 (手機版名片)</h2>
+            </div>
+            
+            <div class="mobile-tabs">
+                <button onclick="toggleMobile('mob-intro')">個人簡介</button>
+                <button onclick="toggleMobile('mob-skills')">興趣專長</button>
+            </div>
 
-        <div id="mob-intro" class="mobile-content-box" style="display: block;">
-            <h3>👋 關於我</h3>
-            <p>我是李塬閎，朝陽科大資工系學生。熱衷於探索新科技與開發軟體！</p>
-        </div>
+            <div id="mob-intro" class="mobile-content-box" style="display: block;">
+                <h3>👋 關於我</h3>
+                <p>我是李塬閎，朝陽科大資工系學生。<br>熱衷於探索新科技與開發軟體！</p>
+            </div>
 
-        <div id="mob-skills" class="mobile-content-box" style="display: none;">
-            <h3>⚡ 專長</h3>
-            <p>C/C++、Python 程式設計</p>
-            <h3>🌟 興趣</h3>
-            <p>騎車、打 Game、羽球</p>
+            <div id="mob-skills" class="mobile-content-box" style="display: none;">
+                <h3>⚡ 專長</h3>
+                <p>C/C++、Python 程式設計</p>
+                <hr>
+                <h3>🌟 興趣</h3>
+                <p>騎車、打 Game、羽球</p>
+            </div>
         </div>
     </div>
 
     <script>
-        // 控制電腦版切換
         function toggleDesktop(targetId) {
             document.querySelectorAll('.desktop-content-box').forEach(function(el) {
                 el.style.display = 'none';
@@ -69,7 +72,6 @@
             document.getElementById(targetId).style.display = 'block';
         }
 
-        // 控制手機版切換
         function toggleMobile(targetId) {
             document.querySelectorAll('.mobile-content-box').forEach(function(el) {
                 el.style.display = 'none';
